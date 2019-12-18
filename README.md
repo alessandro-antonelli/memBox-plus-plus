@@ -5,6 +5,6 @@ Supporta [nove tipi di operazioni](src/ops.h) sugli oggetti, il salvataggio/cari
 
 Per dettagli sui requisiti richiesti, vedere [__Struttura complessivia del progetto__](Struttura%20complessivia%20del%20progetto.pdf) e [__Istruzioni e specifiche__](Istruzioni%20e%20specifiche.txt); per dettagli sulle scelte implementative vedere la [__Relazione__](Relazione/Relazione.pdf).
 
-Progetto finale del Laboratorio di Programmazione Sistema dell'A.A. 2015/16, tenuto dal professor Massimo Torquati (facente parte dell'esame di Sistemi operativi e laboratorio, codice 277AA), nel corso di laurea triennale in Informatica dell'Università di Pisa. Valutato con il voto di 30/30.
+Progetto finale del Laboratorio di Programmazione di Sistema dell'A.A. 2015/16, tenuto dal professor Massimo Torquati (facente parte dell'esame di Sistemi operativi e laboratorio, codice 277AA), nel corso di laurea triennale in Informatica dell'Università di Pisa. Valutato con il voto di 30/30.
 
 Homepage del corso: http://didawiki.cli.di.unipi.it/doku.php/informatica/sol/laboratorio16
