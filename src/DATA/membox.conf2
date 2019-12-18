@@ -1,0 +1,39 @@
+# -------------------------------------------------------------- 
+#
+# File di configurazione del server membox 
+#
+# --------------------------------------------------------------
+
+# path utilizzato per la creazione del socket AF_UNIX
+# ATTENZIONE: se il codice viene sviluppato sulle macchine
+#             del laboratorio utilizzare come nome un nome 
+#             unico, ad esempio: 
+#             /tmp/mbox_sock_<numero-di-matricola>
+UnixPath         = /tmp/mbox_socket
+
+# numero massimo di connessioni pendenti
+MaxConnections	 = 2
+
+# numero di thread nel pool 
+ThreadsInPool    = 2
+
+# dimensione dello storage in numero di oggetti (0 nessun limite)
+StorageSize      = 1024    
+# dimensione dello storage in numero di bytes (0 nessun limite)
+StorageByteSize	 = 65536
+
+# dimensione massima di un oggetto nello storage (0 nessun limite)
+MaxObjSize       = 32768
+
+# file nel quale verranno scritte le statistiche
+# ATTENZIONE: se il codice viene sviluppato sulle macchine
+#             del laboratorio utilizzare come nome un nome 
+#             unico, ad esempio: 
+#             /tmp/mbox_stats_<numero-di-matricola>
+StatFileName     = /tmp/mbox_stats.txt
+# --------------------------------------------------------------
+
+# aggiungere altre opzioni necessarie da qui in poi
+
+
+ 
