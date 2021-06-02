@@ -37,7 +37,7 @@ DUMP_PATH       = /tmp/mbox.dump
 
 CC		=  gcc
 AR              =  ar
-CFLAGS	        += -std=c99 -Wall -pedantic -DMAKE_VALGRIND_HAPPY -DNDEBUG #-DNDEBUG per far sparire assert #-DSTAMPETEST per far comparire stampe di log sul funzionamento del server #-DDEBUG per far comparire stampe quando falliscono le CheckNULL e simili
+CFLAGS	        += -std=c99 -Wall -pedantic -DMAKE_VALGRIND_HAPPY -DNDEBUG -w #-DNDEBUG per far sparire assert #-DSTAMPETEST per far comparire stampe di log sul funzionamento del server #-DDEBUG per far comparire stampe quando falliscono le CheckNULL e simili
 ARFLAGS         =  rvs
 INCLUDES	= -I.
 LDFLAGS 	= -L.
@@ -224,6 +224,35 @@ test9:
 	./testlockobj.sh $(UNIX_PATH) $(STAT_PATH)
 	killall -USR2 -w membox
 	@echo "********** Test9 superato!"
+
+# tutti i test in sequenza
+anytest:
+	make test1
+	sleep 3
+	make test2
+	sleep 3
+	make test3
+	sleep 3
+	make test4
+	sleep 3
+	make test5
+	sleep 3
+	make test6
+	sleep 3
+	make test7
+	sleep 3
+	make test8easy
+	sleep 3
+	make test8
+	sleep 3
+	make test9
+	@echo ""
+	@echo "             /@@@"
+	@echo "           @@@@  "
+	@echo "@@@     /@@@@      Tutti i test sono"
+	@echo " \@@@\@@@@         stati superati! :)"
+	@echo "    @@@@         "
+	@echo ""
 
 
 SUBJECTA="lso16: frammento 2 - corso A"
