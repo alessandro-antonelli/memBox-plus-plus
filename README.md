@@ -1,5 +1,5 @@
 # memBox++
-!(screenshot)[screenshot/statistiche%20ultimo%20timestamp%20aggiornamento%20continuo.gif "Esecuzione di una batteria di operazioni con visualizzazione delle statistiche in tempo reale"]
+![screenshot](screenshot/statistiche%20ultimo%20timestamp%20aggiornamento%20continuo.gif "Esecuzione di una batteria di operazioni con visualizzazione delle statistiche in tempo reale")
 
 Un'applicazione client-server che realizza un repository di oggetti costituiti da sequenze continue di bytes, gestendo la concorrenza tra più client attivi contemporaneamente.
 
@@ -25,6 +25,8 @@ make all
 ./membox -f ./DATA/membox.conf1 &
 ```
 
+Spegnimento server: `killall membox -SIGUSR2`
+
 ### Invio di richieste dal client
 Per eseguire il client (e richiedere al server l'esecuzione di un'operazione) la sintassi è:
 
@@ -34,14 +36,9 @@ Per eseguire il client (e richiedere al server l'esecuzione di un'operazione) la
 
 dove __k__ è la chiave dell'oggetto su cui si vuole operare, __o__ è il numero dell'operazione da eseguire sull'oggetto (per i codici vedere [ops.h](src/ops.h)) e __b__ è la quantità di byte relativa all'operazione.
 
-esecuzione client (con richiesta di operazione PUT (op. 0) di un oggetto di 8192 byte con chiave 0)
-./client -l /tmp/mbox_socket -c 0:0:8192
+Esempio (richiesta di operazione PUT [op. 0] di un oggetto di 8192 byte con chiave 0):
 
-
-Esempio:
-!(screenshot)[screenshot/comando%20singolo.png "Esecuzione di un comando singolo"]
-
-Spegnimento server: `killall membox -SIGUSR2`
+![screenshot](screenshot/comando%20singolo.png "Esecuzione di un comando singolo")
 
 Esecuzione delle batterie di test: `make -s anytest`
 
@@ -50,8 +47,8 @@ Il programma è corredato di uno script bash che consente di visualizzare le sta
 
 Per visualizzare il valore corrente delle statistiche, usare il comando `./memboxstat.sh /tmp/mbox_stats.txt` (oppure, per visualizzare dati costantemente aggiornati in tempo reale, usare `watch -n1 ./memboxstat.sh /tmp/mbox_stats.txt`):
 
-!(screenshot)[screenshot/statistiche%20ultimo%20timestamp.png "Statistiche: valore corrente"]
+![screenshot](screenshot/statistiche%20ultimo%20timestamp.png "Statistiche: valore corrente")
 
 È anche possibile visualizzare lo storico dei valori precedenti (per la sintassi, vedere `./memboxstat.sh --help`):
 
-!(screenshot)[screenshot/statistiche%20tutti%20timestamp.png "Statistiche: storico dei valori precedenti"]
+![screenshot](screenshot/statistiche%20tutti%20timestamp.png "Statistiche: storico dei valori precedenti")
