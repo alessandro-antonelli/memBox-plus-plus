@@ -3,15 +3,13 @@
 
 Un'applicazione client-server che realizza un repository di oggetti costituiti da sequenze continue di bytes, gestendo la concorrenza tra più client attivi contemporaneamente.
 
-Supporta nove tipi di operazioni sugli oggetti, il salvataggio/caricamento del repository in un file di dump e la generazione di statistiche sull'attività del server (con inoltre uno [script bash](src/memboxstat.sh) per la loro visualizzazione).
+Supporta nove tipi di operazioni sugli oggetti, il salvataggio/caricamento del repository in/da un file di dump e la generazione di statistiche sull'attività del server (con inoltre uno [script bash](src/memboxstat.sh) per la loro visualizzazione).
 
 Per dettagli sui requisiti richiesti, vedere [__Struttura complessiva del progetto__](Struttura%20complessiva%20del%20progetto.pdf) e [__Istruzioni e specifiche__](Istruzioni%20e%20specifiche.txt); per dettagli sulle scelte implementative vedere la [__Relazione__](Relazione/Relazione.pdf).
 
-Progetto finale del Laboratorio di Programmazione di Sistema dell'A.A. 2015/16, tenuto dal professor Massimo Torquati (facente parte dell'esame di Sistemi operativi e laboratorio, codice 277AA), nel corso di laurea triennale in Informatica dell'Università di Pisa. Valutato con il voto di 30/30.
+Realizzato come progetto finale del Laboratorio di Programmazione di Sistema dell'A.A. 2015/16, tenuto dal professor Massimo Torquati (facente parte dell'esame di Sistemi operativi e laboratorio, codice 277AA), nel corso di laurea triennale in Informatica dell'Università di Pisa. Valutato con il voto di 30/30. Homepage del corso: http://didawiki.cli.di.unipi.it/doku.php/informatica/sol/laboratorio16
 
-Homepage del corso: http://didawiki.cli.di.unipi.it/doku.php/informatica/sol/laboratorio16
-
-## Istruzioni
+## Istruzioni per l'esecuzione
 ``` Shell Session
 #download sorgenti
 git clone https://github.com/alessandro-antonelli/memBox-plus-plus
@@ -31,16 +29,16 @@ Spegnimento server: `killall membox -SIGUSR2`
 Per eseguire il client (e richiedere al server l'esecuzione di un'operazione) la sintassi è:
 
 ``` Shell Session
-./client -l /tmp/mbox_socket -c <k>:<o>:<b>
+./client -l /tmp/mbox_socket -c K:O:B
 ```
 
-dove __k__ è la chiave dell'oggetto su cui si vuole operare, __o__ è il numero dell'operazione da eseguire sull'oggetto (per i codici vedere [ops.h](src/ops.h)) e __b__ è la quantità di byte relativa all'operazione.
+dove __K__ è la chiave dell'oggetto su cui si vuole operare, __O__ è il numero dell'operazione da eseguire sull'oggetto (per i codici vedere [ops.h](src/ops.h)) e __B__ è la quantità di byte relativa all'operazione.
 
 Esempio (richiesta di operazione PUT [op. 0] di un oggetto di 8192 byte con chiave 0):
 
 ![screenshot](screenshot/comando%20singolo.png "Esecuzione di un comando singolo")
 
-Esecuzione delle batterie di test: `make -s anytest`
+Esecuzione di una batteria di 9 test prestabiliti: `make -s anytest`
 
 ### Visualizzazione delle statistiche
 Il programma è corredato di uno script bash che consente di visualizzare le statistiche del server.
